@@ -15,5 +15,5 @@ Intent utterances for Alexa:
 2. `GetHeartRate problem`  
 
 Sample utterances:  
-1. <i>Alexa, ask <b>Health Data</b> for <b>health report</b>  
-2. <i>Alexa, ask <b>Health Data</b> for <b>problem</b>
+"<i>Alexa, ask <b>Health Data</b> for <b>health report</b>"  
+"<i>Alexa, ask <b>Health Data</b> for <b>problem</b>"
