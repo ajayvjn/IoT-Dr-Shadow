@@ -1,0 +1,21 @@
+Intent:
+
+{
+  "intents": [
+    {
+      "intent":"GetHealthProblem"
+    },
+    {
+      "intent":"GetHeartRate"
+    },
+    {
+      "intent":"GetSeriousness"
+    }
+  ]
+}
+
+
+Sample Utterances:
+
+GetHealthProblem health report
+GetHeartRate problem
