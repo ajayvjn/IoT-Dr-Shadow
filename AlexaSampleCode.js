@@ -3,7 +3,7 @@
 var https = require('https');
 
 /**
- * 
+ *  Handles request from Health Data API
  * 
  * @param {any} event 
  * @param {any} context 
@@ -15,11 +15,14 @@ exports.handler = (event, context) => {
         }
 
         switch (event.request.type) {
+
             case "LaunchRequest":
                 console.log("LAUNCH REQUEST");
                 break;
+
             case "IntentRequest":
                 console.log("INTENT REQUEST");
+
                 switch (event.request.intent.name) {
                     case "GetHealthProblem":
                         context.succeed(
@@ -29,6 +32,7 @@ exports.handler = (event, context) => {
                             )
                         );
                         break;
+
                     case "GetHeartRate":
                         context.succeed(
                             generateResponse(
@@ -37,19 +41,19 @@ exports.handler = (event, context) => {
                             )
                         );
                         break;
+
                     default:
                         context.fall('INVALID INTENT NAME: ${event.request.intent.name}')
-
                 }
                 break;
+
             case "SessionEndedRequest":
                 console.log("SESSION ENDED REQUEST");
                 break;
+
             default:
                 context.fall('INVALID REQUEST TYPE: ${event.request.type}')
         }
-
-
     } catch (error) { context.fail(`Exception: ${error}`) }
 };
 
@@ -63,9 +67,9 @@ buildSpeechletResponse = (outputText, shouldEndSession) => {
         },
         shouldEndSession: shouldEndSession
     }
-
 }
 
+// Response generator for Alexa
 generateResponse = (speechletResponse, sessionAttributes) => {
 
     return {
